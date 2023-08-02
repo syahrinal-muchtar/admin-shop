@@ -14,7 +14,7 @@ export interface IFetchData {
   additionalHeader?: any;
 }
 
-export async function callAPIs<T>({
+export async function callAPIs({
   method,
   uri,
   params,
