@@ -1,7 +1,6 @@
 import {
   Box,
   Tooltip,
-  Badge,
   TooltipProps,
   tooltipClasses,
   styled,
