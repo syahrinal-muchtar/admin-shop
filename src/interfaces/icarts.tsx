@@ -1,11 +1,11 @@
 export interface IDataCarts {
-  carts: Cart[];
+  carts: ICart[];
   total: number;
   skip: number;
   limit: number;
 }
 
-export interface Cart {
+export interface ICart {
   id: number;
   products: Product[];
   total: number;

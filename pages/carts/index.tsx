@@ -1,8 +1,9 @@
 import React from "react";
+import CartsIndex from "@/containers/cart/cartList";
 import SidebarLayout from "@/layouts/SidebarLayout";
 
 function ApplicationsProducts() {
-  return <></>;
+  return <CartsIndex />;
 }
 
 ApplicationsProducts.getLayout = (page) => (
