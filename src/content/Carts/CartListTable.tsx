@@ -13,7 +13,11 @@ import {
   TableContainer,
   Typography,
   LinearProgress,
+  Tooltip,
+  IconButton,
+  useTheme,
 } from "@mui/material";
+import LaunchTwoToneIcon from "@mui/icons-material/LaunchTwoTone";
 
 import { ICart } from "@/interfaces/icarts";
 
@@ -46,6 +50,7 @@ const CartListTable: FC<CartListTableProps> = ({ carts, isLoading }) => {
 
   const paginatedCarts = applyPagination(carts, page, limit);
 
+  const theme = useTheme();
   return (
     <Card>
       <Divider />
@@ -61,6 +66,7 @@ const CartListTable: FC<CartListTableProps> = ({ carts, isLoading }) => {
                 <TableCell align="right">Total Quantity</TableCell>
                 <TableCell align="right">Total Discount</TableCell>
                 <TableCell align="right">Subtotal</TableCell>
+                <TableCell align="right">Action</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -121,6 +127,22 @@ const CartListTable: FC<CartListTableProps> = ({ carts, isLoading }) => {
                       >
                         $ {cart.total}
                       </Typography>
+                    </TableCell>
+                    <TableCell align="right">
+                      <Tooltip title="Show Cart" arrow>
+                        <IconButton
+                          sx={{
+                            "&:hover": {
+                              background: theme.colors.primary.lighter,
+                            },
+                            color: theme.palette.primary.main,
+                          }}
+                          color="inherit"
+                          size="small"
+                        >
+                          <LaunchTwoToneIcon fontSize="small" />
+                        </IconButton>
+                      </Tooltip>
                     </TableCell>
                   </TableRow>
                 );
