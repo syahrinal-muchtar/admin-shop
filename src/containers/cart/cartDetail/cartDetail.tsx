@@ -1,5 +1,5 @@
-function Products() {
+function CartDetail() {
   return <></>;
 }
 
-export default Products;
+export default CartDetail;
